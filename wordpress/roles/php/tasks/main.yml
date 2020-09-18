@@ -1,0 +1,6 @@
+# PHP module installation
+- name: Install PHP Extensions
+  apt:
+    name: "{{ item }}"
+  loop: "{{ php_modules }}"
+  tags: [ system ]
