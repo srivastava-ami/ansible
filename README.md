@@ -1,7 +1,7 @@
 # Ansible
 Personal projects with ansible.
 
-This is tested on Mac book as a controller and server lamp (Ubuntu 18 on aws) as a node
+This is tested on Mac book as a controller and Ubuntu 18 on aws as a node
 
 ## Quick introduction to ansible
 * It will be faster and easier to understand if ever worked with bash script which executes remotely.
