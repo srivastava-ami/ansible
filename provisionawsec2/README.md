@@ -1,4 +1,4 @@
-*Using Ansible to provision AWS EC2 instances*
+# Using Ansible to provision AWS EC2 instances 
 
     Welcome, this article shows a simple approach to use Ansible for provisioning an AWS EC2 instance.
 
@@ -9,16 +9,16 @@
         - Run Ansible to provision the EC2 instance
         - Connect to the EC2 instance via SSH
 
-    * Create AWS user
+    ## Create AWS user
         Open the AWS Console, search for IAM (Identity and Access Management) and follow the steps to create a user and take note of the Access Key and Secret Key that will be used by Ansible to set up the instances.
 
-    * EC2 module dependencies
+    ## EC2 module dependencies
         pip install boto boto3 ansible
 
-    * Create SSH keys to connect to the EC2 instance after provisioning
+    ## Create SSH keys to connect to the EC2 instance after provisioning
         ssh-keygen -t rsa -b 4096 -f ~/.ssh/my_aws
 
-    * Create Ansible Vault file to store the AWS Access and Secret keys.
+    ## Create Ansible Vault file to store the AWS Access and Secret keys.
         cd AWS_Ansible
         ansible-vault create group_vars/all/pass.yml
         New Vault password:
@@ -39,8 +39,8 @@
             ec2_access_key: AAAAAAAAAAAAAABBBBBBBBBBBB
             ec2_secret_key: afjdfadgf$fgajk5ragesfjgjsfdbtirhf
 
-    * Create the instance
+    ## Create the instance
         ansible-playbook playbook.yml --ask-vault-pass --tags create_ec2
 
-    * Connect to the EC2 instance via SSH
+    ## Connect to the EC2 instance via SSH
         ssh -i ~/.ssh/my_aws ubuntu@ec2-IP.us-east-1.compute.amazonaws.com
